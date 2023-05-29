@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<style>
+    .fa-add:hover{
+        color: rgb(0, 123, 246) !important;
+    }
+</style>
+<div class="container">
+    <div class="btns" style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="text"><h5>iCoder</h5></div>
+        <div class="icons">
+            <a class="grey-text right" href="/addpost/" target="_blank"><i class="fa-classic fa-add fa-2x" style="color: #000;font-weight: 700; margin: 0 4px;"></i></a>
+            
+            <a class="black-text right" href="https://www.twitter.com" target="_blank"><i class="fa-brands fa-twitter fa-2x" style="color: #000; margin: 0 4px;"></i></a>
+		  <a class="grey-text right" href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook fa-2x" style="color: #000;"></i></a>
+        </div>
+    </div>
+    <img width="1280" height="720" src="/static/img/home-img.jpg" style="border-radius: 5px;" alt="">
+</div>
+
+{% endblock body %}

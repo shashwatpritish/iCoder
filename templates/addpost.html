@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+{% block body %}
+<style>
+    #file {
+        display: none !important;
+    }
+
+    #label-file:hover {
+        background: #00c5b1 !important;
+    }
+
+    #post {
+        background: #009688 !important;
+    }
+
+    #post:hover {
+        background: #00c5b1 !important;
+    }
+</style>
+
+<h1 class="center teal-text" style="font-weight: 700;">Submit the form below to add post</h1>
+
+<div class="container">
+    <form method="POST" action="/posts/">
+        {% csrf_token %}
+        <div class="name">
+            <label for="name">Enter name</label>
+            <input type="text" name="name" id="name">
+        </div>
+
+        <div class="title">
+            <label for="title">Enter title</label>
+            <input type="text" name="title" id="title">
+        </div>
+
+        <div class="slug">
+            <label for="slug">Enter slug</label>
+            <input type="text" name="slug" id="slug">
+        </div>
+        <br><br>
+        <br>
+        <div class="content">
+            <textarea name="content" id="content" cols="90" rows="90" style="width: 80vw; height: 20vh;outline: none;"
+                placeholder="Enter the content of the blog"></textarea>
+        </div>
+
+        <button type="submit" style="padding: -1px 10px;font-size: 45px;border: none;color: white;border-radius: 10px;"
+            id="post">Post</button>
+    </form>
+</div>
+
+{% endblock body %}

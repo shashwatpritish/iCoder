@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+<style>
+    .hidden{
+        visibility: hidden;
+    }
+</style>
+
+{% if messages %}
+      {% for message in messages %}
+      <div class="teal teal-text text-lighten-4" style="width: 100vw; height: 30px; padding: 5px 0;display: flex;justify-content: space-around;">
+        <div><strong>{{ message }}</strong></div>
+        <strong class="alert-del" style="cursor: pointer;">&times;</strong>
+      </div>
+    {% endfor %}
+    {% endif %}
+
+<div class="container">
+    <form action="/contact/" method="POST">
+        {% csrf_token %}
+        <div class="name">
+            <label for="name">Enter name</label>
+            <input type="text" name="name" id="name">
+        </div>
+
+        <div class="email">
+            <label for="email">Enter email</label>
+            <input type="email" name="email" id="email">
+        </div>
+
+        <div class="phone">
+            <label for="phone">Enter your Phone No.</label>
+            <input type="number" name="phone" id="phone">
+        </div>
+
+        <div class="message">
+            <textarea name="message" style="outline: none;    width: 70vw;
+            height: 20vh;" placeholder="Enter message" id="message" cols="30" rows="30"></textarea>
+        </div>
+
+        <button class="btn teal white-text" type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    var alert_del = document.querySelectorAll(".alert-del")
+    alert_del.forEach((x)=>{
+      x.addEventListener('click',()=>x.parentElement.classList.add('hidden'))
+    })
+  </script>
+{% endblock body %}

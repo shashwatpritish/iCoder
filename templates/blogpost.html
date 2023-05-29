@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+{% for blogpost in blogposts %}
+
+<div class="container">
+    <h1 style="font-size: 80px;font-weight: 700;" class="center blue-text">{{ blogpost.title }}</h1>
+    <hr>
+    <p style="font-size: larger;">
+        {{ blogpost.content }}
+    </p>
+    <pre class="red-text">              &HorizontalLine;  {{ blogpost.name }}</pre>
+</div>
+{% endfor %}
+{% endblock body %}

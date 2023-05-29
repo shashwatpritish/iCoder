@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+	body{
+		overflow-x: hidden;
+	}
+
+	.fa-facebook:hover{
+		color: #1877f2 !important;
+	}
+
+	.fa-twitter:hover{
+		color: #03a0e8 !important;
+	}
+</style>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="shortcut icon" href="/static/img/logo.png" type="image/x-icon">
+
+	<link rel="stylesheet" href="/static/css/materialize.min.css">
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<title>iCoder - Haven for Coders</title>
+</head>
+
+<body>
+<header style="background-image: url('/static/img/home-bg.jpg');background-size: cover; width: 100vw; height: 70vh;background-color: grey;background-blend-mode: multiply;padding: 0 10px;">
+	<nav style="background: none;">
+		<div class="nav-wrapper">
+			<a href="/" class="brand-logo" style="font-weight: bolder;">iCoder</a>
+			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="/">Home</a></li>
+				<li><a href="/about/">About</a></li>
+				<li><a href="/addpost/">Add Post</a></li>
+				<li><a href="/posts/">Show Post</a></li>
+				<li><a href="/contact/">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+<br><br>
+	<h1 class="center-align yellow-text" style="font-weight: 700; font-size: 110px;">iCoder</h1>
+	<h3 class="center-align white-text" style="font-weight: 500; font-size: 60px;">Haven for Coders</h3>
+</header>
+
+	<ul class="sidenav" id="mobile-demo">
+		<li><a href="/">Home</a></li>
+		<li><a href="/about/">About</a></li>
+		<li><a href="/addpost/">Add Post</a></li>
+		<li><a href="/posts/">Show Post</a></li>
+		<li><a href="/contact/">Contact</a></li>
+	</ul><br>
+
+	{% block body %}{% endblock body %}
+	<footer class="page-footer white">
+		<div class="footer-copyright white">
+		  <div class="container black-text">
+			  iCoder Copyright &copy; all rights reserved
+			  <a class="black-text right" href="twitter.com"><i class="fa-brands fa-twitter fa-2x" style="color: #000; margin: 0 4px;"></i></a>
+
+		  <a class="grey-text right" href="facebook.com"><i class="fa-brands fa-facebook fa-2x" style="color: #000;"></i></a>
+
+		  </div>
+		</div>
+	  </footer>
+</body>
+<script>
+$(document).ready(function(){
+    $('.fixed-action-btn').floatingActionButton();
+    $(".dropdown-trigger").dropdown();
+    $('.sidenav').sidenav();
+  });
+</script>
+<script src="/static/js/materialize.min.js"></script>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/awesome.js"></script>
+
+</html>
